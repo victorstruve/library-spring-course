@@ -8,7 +8,6 @@ import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.sql.rowset.serial.SerialException;
 import java.util.EnumSet;
 
 public class DispatcherServletInitilizer extends AbstractAnnotationConfigDispatcherServletInitializer {
