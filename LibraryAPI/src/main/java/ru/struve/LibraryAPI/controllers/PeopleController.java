@@ -59,8 +59,7 @@ public class PeopleController {
 
     @GetMapping("/{id}")
     public PeopleResponse getPerson(@PathVariable("id") int id){
-//        Optional<Person> personForWhat = peopleService.findById(id);
-//        personForWhat.get().setBooks(bookService.findByOwner(id));
+
         PeopleResponse person = new PeopleResponse(peopleService.findById(id).stream().map(this::convertToPeopleDTO)
                 .collect(Collectors.toList()));
         if (person.getPeople().isEmpty()){
@@ -94,6 +93,14 @@ public class PeopleController {
             return ResponseEntity.ok(HttpStatus.NOT_FOUND);
         }
         bookService.deleteReader(bookId);
+        return ResponseEntity.ok(HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}/delete")
+    public ResponseEntity<HttpStatus> delete(@PathVariable("id") int id){
+        if(peopleService.findById(id).isEmpty())
+            return ResponseEntity.ok(HttpStatus.NOT_FOUND);
+        peopleService.delete(id);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
