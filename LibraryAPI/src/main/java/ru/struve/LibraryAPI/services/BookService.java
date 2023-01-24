@@ -59,9 +59,6 @@ public class BookService {
     }
     @Transactional
     public void delete(int id){
-        Person person = peopleService.findById(booksRepository.findById(id).get().getOwner().getId()).get();
-        person.setBooks(null);
-        peopleService.save(person);
         booksRepository.deleteById(id);
     }
     public List<Book> findByOwner(int ownerId){
