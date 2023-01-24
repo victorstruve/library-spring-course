@@ -88,6 +88,8 @@ public class BooksController {
         if (bindingResult.hasErrors()){
             returnErrorsToClient(bindingResult);
         }
+        if (bookService.findByID(id).get().getOwner() != null)
+            return ResponseEntity.ok(HttpStatus.BAD_GATEWAY);
         bookService.addReader(id,readerDTO.getId());
         return ResponseEntity.ok(HttpStatus.OK);
     }
