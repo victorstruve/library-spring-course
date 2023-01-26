@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Index</title>
+  <link rel="stylesheet" href="/styles/styles.css"/>
+
+</head>
+<body>
+<header>
+  <div id="Logo">
+    <img src="/Logo.png"/>
+  </div>
+  <a class="newPerson" href="#CreateBlur">
+    <span>Новый участник</span>
+  </a>
+</header>
+<div class="middle">
+  <input id="ColCheck" type="checkbox">
+  <span id="ColName">Имя</span>
+  <span id="ColAge">Возраст</span>
+  <span id="ColEmail">Email</span>
+</div>
+
+
+<div class="PeopleMenu" th:each="unit : ${people}">
+    <input class="PeopleCheck" type="checkbox"/>
+
+    <a id="PeopleName" th:href="@{/people/{id}(id=${unit.getId()})}"
+       th:text="${unit.getName()}">userEmail</a>
+
+    <a id="PeopleAge" th:href="@{/people/{id}(id=${unit.getId()})}"
+       th:text="${unit.getAge()}">userEmail</a>
+
+    <a id="PeopleEmail" th:href="@{/people/{id}(id=${unit.getId()})}"
+       th:text="${unit.getEmail()}">userEmail</a>
+
+    <a id="EditButt" href="#Edit" >
+        <img src="/Edit%20btn.svg"/></a>
+
+    <div class="Blur" id ="Edit">
+        <div class="Menu" id="EditMenu">
+            <a href="" id="CloseEditMenu"><img src="/Exit.svg"/></a>
+            <span id="TextOfEdit">Редактировать участника</span>
+            <label class="TextOfPersonName" for="NameEdit">Имя</label>
+            <label class="TextOfPersonAge"  for="AgeEdit">Возраст</label>
+            <label class="TextOfPersonEmail" for="EmailEdit">Email</label>
+            <form th:method="PATCH" th:action="@{/update/{id}(id=${unit.id})}" th:object="${person}">
+                <input class="NameField" id="NameEdit" type="text" th:field="*{name}"/>
+                <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+                <input class="AgeField" id="AgeEdit" type="text" th:field="*{age}"/>
+                <input class="EmailField" id="EmailEdit" type="text" th:field="*{email}"/>
+                <input class="CreateUser" type="image" src="/CreateBtn.svg"/>
+            </form>
+        </div>
+    </div>
+
+    <form id="DeleteButt" th:method="DELETE" th:action="@{/delete/{id}(id=${unit.getId()})}">
+        <input type="image" src="/DeleteBtn.svg"/>
+    </form>
+
+</div>
+
+<div class="Blur" id="CreateBlur">
+    <div class="Menu" id="CreateMenu">
+        <a href="" id="CloseCreateMenu"><img src="/Exit.svg"/></a>
+        <span id="TextOfNew">Добавить нового участника</span>
+        <label class="TextOfPersonName" for="NameCreate">Имя</label>
+        <label class="TextOfPersonAge" for="AgeCreate">Возраст</label>
+        <label class="TextOfPersonEmail" for="EmailCreate">Email</label>
+        <form th:method="POST" th:action="@{/create}" th:object="${person}">
+            <input class="NameField" id="NameCreate" type="text" th:field="*{name}">
+            <input class="AgeField" id="AgeCreate" type="text" th:field="*{age}">
+            <input class="EmailField" id="EmailCreate" type="text" th:field="*{email}">
+            <input class="CreateUser" type="image" src="/CreateBtn.svg"/>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

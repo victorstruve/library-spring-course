@@ -1,0 +1,374 @@
+@font-face {
+    font-family: "Stratos LC Web";
+    src: url("StratosLCWebRegular.ttf");
+}
+body{
+    margin: 0;
+}
+
+header{
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    width : 1920px;
+    height: 125px;
+    left: 0px;
+    top: 0px;
+
+    background: #FFFFFF;
+    border-bottom: 1px solid #E9E9E9;
+}
+#Logo{
+
+    position: absolute;
+    width: 275px;
+    height: 70px;
+    left: 100px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto 0;
+
+}
+.newPerson{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    align : center;
+    gap: 10px;
+    position: absolute;
+
+    width: 222px;
+    height: 54px;
+    left: 1598px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto 0;
+    text-decoration: none;
+
+    background: #3498DB;
+    border-radius: 13px;
+
+
+}
+span{
+
+    font-family: 'Stratos LC Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+
+
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+a{
+
+    font-family: 'Stratos LC Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 33px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+    text-decoration: none;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+#ColName{
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    left: 140px;
+    top: -4px;
+
+
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #5C5C5C;
+}
+#ColAge{
+    position: absolute;
+    width: 62px;
+    height: 20px;
+    left: 581px;
+    top: -4px;
+
+
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #5C5C5C;
+
+}
+#ColEmail{
+    position: absolute;
+    width: 38px;
+    height: 20px;
+    left: 832px;
+    top: -4px;
+
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #5C5C5C;
+}
+#ColCheck{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0px;
+    top: -6px;
+
+    border: 1px solid #D4D4D4;
+    border-radius: 5px;
+}
+.middle{
+    position: absolute;
+    width: 1720px;
+    height: 39px;
+    left: 100px;
+    top: 152px;
+
+    background: #FFFFFF;
+    border-bottom: 1px solid #E9E9E9;
+}
+.people{
+    width: 1720px;
+    height: 88px;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.PeopleMenu{
+
+    margin:10px;
+    background: #FFFFFF;
+    width:1720px;
+    height:116px;
+    position:relative;
+    left: 100px;
+    top: 100px;
+
+}
+.PeopleCheck{
+    box-sizing: border-box;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-size: 26px;
+    line-height: 33px;
+    color: #000000;
+    left: -8px;
+
+    border: 1px solid #D4D4D4;
+    border-radius: 5px;
+}
+#PeopleName{
+    position: absolute;
+    font-size: 26px;
+    line-height: 33px;
+    left: 140px;
+    color: #000000;
+}
+#PeopleAge{
+    position: absolute;
+    font-size: 26px;
+    line-height: 33px;
+    left: 581px;
+    color: #000000;
+}
+#PeopleEmail{
+    position: absolute;
+    font-size: 26px;
+    line-height: 33px;
+    left: 832px;
+    color: #000000;
+}
+#EditButt{
+
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    left: 1599px;
+    top: 5px;
+
+    border-radius: 13px;
+}
+#DeleteButt{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    left: 1660px;
+    top: 5px;
+
+    border-radius: 13px;
+}
+.Blur{
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.Menu{
+    display: block;
+    position: fixed;
+    width: 547px;
+    height: 406px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: #FFFFFF;
+    box-shadow: 0px 12px 20px 7px rgba(11, 22, 67, 0.07);
+    border-radius: 12px;
+    margin: auto;
+
+}
+.Blur:target{display: block}
+#CloseEditMenu{
+    position: absolute;
+    left: 488px;
+    top: 35px;
+}
+#CloseCreateMenu{
+    position: absolute;
+    left: 488px;
+    top: 35px;
+}
+#TextOfEdit{
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    font-size: 26px;
+    line-height: 33px;
+
+    color: #000000;
+}
+#TextOfNew{
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    font-size: 26px;
+    line-height: 33px;
+
+    color: #000000;
+}
+.TextOfPersonName{
+    position: absolute;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #5C5C5C;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    top: 97px;
+    left: 35px;
+}
+.TextOfPersonAge{
+    position: absolute;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #5C5C5C;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    left: 450px;
+    top: 97px;
+}
+.TextOfPersonEmail{
+    position: absolute;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #5C5C5C;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    top: 197px;
+    left: 35px;
+}
+
+
+.CreateUser{
+    position: absolute;
+    top: 322px;
+    left: 149px;
+}
+.NameField{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 394px;
+    height: 45px;
+    left: 35px;
+    top: 127px;
+
+    background: #F3F3F3;
+    border: 1px solid #ECECEC;
+    border-radius: 10px;
+
+}
+.AgeField{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 55px;
+    height: 45px;
+    left: 450px;
+    top: 127px;
+
+    background: #F3F3F3;
+    border: 1px solid #ECECEC;
+    border-radius: 10px;
+
+}
+.EmailField{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 477px;
+    height: 45px;
+    left: 35px;
+    top: 227px;
+
+    background: #F3F3F3;
+    border: 1px solid #ECECEC;
+    border-radius: 10px;
+}
