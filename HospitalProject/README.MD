@@ -2,8 +2,10 @@
 Проект реализованный с помощью Rest и Soap сервисов с помощью Soap реализован
 сервис создания записей на указанную дату.
 # Soap сервис
-Взаимодействие идет путём отправки Xml типа:
-![Схема отправки запроса](https://github.com/victorstruve/library-spring-course/tree/master/HospitalProject/src/main/resources/Screenshots/XMLRequest.png)
+Взаимодействие идет путём отправки Xml типа:  
+
+![Схема отправки запроса](https://github.com/victorstruve/library-spring-course/blob/master/HospitalProject/src/main/resources/Screenshots/XMLRequest.png)
+
 На адрес `/ws/schedule.wsdl`
 После отправки формируются записи в бд по переданным правилам
 # Rest сервис
@@ -29,13 +31,15 @@ Post запрос, тело запроса содержит обязательн
 
 `/patients/checkById`
 Post запрос, тело запроса содержит обязательные поля: `id`, `year`, `month`, `day`,
-после отправки возвращает список талонов доступных для записи
-![Схема отправки запроса](https://github.com/victorstruve/library-spring-course/tree/master/HospitalProject/src/main/resources/Screenshots/checkById.png)
+после отправки возвращает список талонов доступных для записи  
+
+![Схема отправки запроса](https://github.com/victorstruve/library-spring-course/blob/master/HospitalProject/src/main/resources/Screenshots/checkById.png)  
 
 `patients/getSlots`
 Post запрос, тело запроса содержит обязательное поле `patientId`, после отправки
-возвращает все талоны занятые переданным пациентом
-![Схема отправки запроса](https://github.com/victorstruve/library-spring-course/tree/master/HospitalProject/src/main/resources/Screenshots/getSlots.png)
+возвращает все талоны занятые переданным пациентом  
+
+![Схема отправки запроса](https://github.com/victorstruve/library-spring-course/blob/master/HospitalProject/src/main/resources/Screenshots/getSlots.png) 
 
 `patient/{id}/selectDoctor`
 Put запрос, тело запроса состоит из обязательных полей `doctorId` - id врача
