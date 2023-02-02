@@ -3,7 +3,8 @@
 сервис создания записей на указанную дату.
 # Soap сервис
 Взаимодействие идет путём отправки Xml типа:
-![Схема отправки запроса](https://github.com/victorstruve/library-spring-course/tree/master/HospitalProject/src/main/resources/Screenshots/XMLRequest.png)
+![Схема отправки запроса](https://github.com/victorstruve/library-spring-course/blob/master/HospitalProject/src/main/resources/Screenshots/XMLRequest.png)
+
 На адрес `/ws/schedule.wsdl`
 После отправки формируются записи в бд по переданным правилам
 # Rest сервис
